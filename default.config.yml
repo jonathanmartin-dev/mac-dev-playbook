@@ -1,8 +1,9 @@
 ---
+---
 downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
-configure_terminal: true
+configure_terminal: false
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
@@ -17,7 +18,7 @@ dockitems_persist: []
 #   path: "/Applications/Sublime Text.app/"
 #   pos: 5
 
-configure_sudoers: false
+configure_sudoers: true
 sudoers_custom_config: ''
 # Example:
 # sudoers_custom_config: |
@@ -38,29 +39,30 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
-  - git
-  - github/gh/gh
+  - docker-completion
   - go
   - gpg
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
+  - k9s
+  - direnv
+  - awscli
+  - aws-iam-authenticator
+  - aws-elasticbeanstalk
+  - helm 
+  - kubernetes-cli
   - nmap
+  - sqlite
   - node
-  - nvm
-  - php
+  - nmap
+  - packer
+  - terraform
+  - terraform-docs
   - ssh-copy-id
-  - cowsay
-  - readline
-  - openssl
-  - pv
+  - terragrunt
+  - vagrant-completion
+  - yamllint
+  - zsh
   - wget
-  - wrk
+  - zsh-completions
   - zsh-history-substring-search
 
 homebrew_taps:
@@ -69,17 +71,16 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
-  - docker
-  - dropbox
   - firefox
   - google-chrome
-  - handbrake
-  - licecap
-  - sequel-ace
+  - pritunl
   - slack
-  - sublime-text
-  - transmit
+  - sourcetree
+  - tabby
+  - vagrant
+  - vagrant-manager
+  - virtualbox
+  - visual-studio-code
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
@@ -112,19 +113,7 @@ pip_packages: []
 configure_sublime: false
 sublime_base_path: '~/Library/Application Support/Sublime Text'
 sublime_config_path: "Packages/User"
-sublime_package_control:
-  - "DocBlockr"
-  - "Dockerfile Syntax Highlighting"
-  - "FileDiffs"
-  - "GitHub Flavored Markdown Preview"
-  - "Jinja2"
-  - "Package Control"
-  - "PHP-Twig"
-  - "Pretty JSON"
-  - "SublimeLinter"
-  - "SublimeLinter-contrib-yamllint"
-  - "TrailingSpaces"
-  - "WordCount"
+sublime_package_control: []
 
 # Glob pattern to ansible task files to run after all other tasks are finished.
 post_provision_tasks: []
