@@ -1,6 +1,6 @@
-<img src="https://raw.githubusercontent.com/geerlingguy/mac-dev-playbook/master/files/Mac-Dev-Playbook-Logo.png" width="250" height="156" alt="Mac Dev Playbook Logo" />
-
 # Mac Development Ansible Playbook
+
+![Mac-Dev-Playbook-Logo](files/Mac-Dev-Playbook-Logo.png)
 
 [![CI][badge-gh-actions]][link-gh-actions]
 
@@ -30,11 +30,12 @@ You can use this playbook to manage other Macs as well; the playbook doesn't eve
 
 > You can also enable remote login on the command line:
 >
->     sudo systemsetup -setremotelogin on
+>`sudo systemsetup -setremotelogin on`
+>
 
 Then edit the `inventory` file in this repository and change the line that starts with `127.0.0.1` to:
 
-```
+```bash
 [ip address or hostname of mac]  ansible_user=[mac ssh username]
 ```
 
@@ -44,7 +45,9 @@ If you need to supply an SSH password (if you don't use SSH keys), make sure to 
 
 You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag. The tags available are `dotfiles`, `homebrew`, `mas`, `extra-packages` and `osx`.
 
-    ansible-playbook main.yml -K --tags "dotfiles,homebrew"
+```shell
+ansible-playbook main.yml -K --tags "dotfiles,homebrew"
+```
 
 ## Overriding Defaults
 
@@ -154,8 +157,8 @@ Many people have asked me if I often wipe my entire workstation and start from s
 
 You can also run macOS itself inside a VM, for at least some of the required testing (App Store apps and some proprietary software might not install properly). I currently recommend:
 
-  - [UTM](https://mac.getutm.app)
-  - [Tart](https://github.com/cirruslabs/tart)
+- [UTM](https://mac.getutm.app)
+- [Tart](https://github.com/cirruslabs/tart)
 
 ## Ansible for DevOps
 
@@ -165,5 +168,5 @@ Check out [Ansible for DevOps](https://www.ansiblefordevops.com/), which teaches
 
 This project was created by [Jeff Geerling](https://www.jeffgeerling.com/) (originally inspired by [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks)).
 
-[badge-gh-actions]: https://github.com/geerlingguy/mac-dev-playbook/workflows/CI/badge.svg?event=push
-[link-gh-actions]: https://github.com/geerlingguy/mac-dev-playbook/actions?query=workflow%3ACI
+[badge-gh-actions]: https://github.com/jonathanmartin-dev/mac-dev-playbook/workflows/CI/badge.svg?event=push
+[link-gh-actions]: https://github.com/jonathanmartin-dev/mac-dev-playbook/actions?query=workflow%3ACI

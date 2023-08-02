@@ -6,30 +6,48 @@ configure_terminal: false
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
-configure_dock: false
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
-dockitems_persist: []
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
-
+configure_dock: true
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+  - 'App Store'
+  - Maps
+  - Photos
+  - Facetime
+  - Reminders
+  - Freeform
+  - TV
+  - Music
+  - News
+dockitems_persist:
+  - name: "Firefox"
+    path: "/Applications/Firefox.app/"
+    pos: 2
+  - name: "Google Chrome"
+    path: "/Applications/Google Chrome.app/"
+    pos: 3
+  - name: "Tabby"
+    path: "/Applications/Tabby.app/"
+    pos: 4
+  - name: "1Password"
+    path: "/Applications/1Password.app/"
+    pos: 5
+  - name: "Visual Studio Code"
+    path: "/Applications/Visual Studio Code.app/"
+    pos: 6
 configure_sudoers: true
-sudoers_custom_config: ''
-# Example:
-# sudoers_custom_config: |
-#   # Allow users in admin group to use sudo with no password.
-#   %admin ALL=(ALL) NOPASSWD: ALL
-
+sudoers_custom_config: |
+  # Allow users in admin group to use sudo with no password.
+  %admin ALL=(ALL) NOPASSWD: ALL
 dotfiles_repo: git@gitlab.com:jonathanmarteen/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
 dotfiles_files:
   - .zshrc
-  - .gitignore
+  - .gitignore_global
+  - .gitconfig
+  - .bash_profile
   - .inputrc
   - .osx
   - .vimrc
@@ -46,11 +64,11 @@ homebrew_installed_packages:
   - awscli
   - aws-iam-authenticator
   - aws-elasticbeanstalk
-  - helm 
+  - helm
   - kubernetes-cli
   - nmap
   - sqlite
-  - node
+  - nvm
   - nmap
   - packer
   - terraform
@@ -80,6 +98,10 @@ homebrew_cask_apps:
   - vagrant-manager
   - virtualbox
   - visual-studio-code
+  - 1password
+  - spotify
+  - docker
+  - droplr
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
